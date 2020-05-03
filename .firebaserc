@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "crudproyectodebicicletas": {
+      "hosting": {
+        "app": [
+          "crudproyectodebicicletas"
+        ]
+      }
+    }
+  }
+}

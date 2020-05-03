@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title> Mantenedor De Usuarios</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+    <form onsubmit="processForm(event)">
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+            <ion-item>
+                <ion-label position="stacked">Ingrese su Nombre
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text" name="usuario" [(ngModel)]="usuario.nombre"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="stacked">Ingrese su Correo
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="text" name="correo" [(ngModel)]="usuario.email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Administrador</ion-label>
+                <ion-checkbox name="Administrador"[(ngModel)]="usuario.rolAdmin"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                <ion-label>RolSupervisor</ion-label>
+                <ion-checkbox name="RolSupervisor"[(ngModel)]="usuario.RolSuper"></ion-checkbox>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>RolLimpieza</ion-label>
+                <ion-checkbox name="RolLimpieza"[(ngModel)]="usuario.RolLim"></ion-checkbox>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Usuarios-Deshabilitados</ion-label>
+                <ion-checkbox name="usario-Deshabilitados" [(ngModel)]="usuario.roleDeshabilitado"></ion-checkbox>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>RolMovilidad</ion-label>
+                <ion-checkbox name="RolMovilidad" [(ngModel)]="usuario.rolemovi"></ion-checkbox>
+            </ion-item>
+
+        </ion-list>
+
+        <ion-item>
+            <ion-label>RolTec.Ce</ion-label>
+            <ion-checkbox name="RolTec.ce" [(ngModel)]="usuario.rolce"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>RolTec.Bicicletas</ion-label>
+            <ion-checkbox name="RolTec.Bicicletas" [(ngModel)]="usuario.roleBici"></ion-checkbox>
+
+        </ion-item>
+        <ion-fab horizontal="end" vertical="bottom" (click)="guardarUsuario()" slot="fixed">
+            <ion-fab-button>
+                <ion-icon name="share-outline"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+    </form>
+</ion-content>

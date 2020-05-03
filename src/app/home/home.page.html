@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Manten de Usuarios
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" fill="outline" (click)="exportarExcel()">
+        <ion-icon name="cloud-download-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-fab horizontal="end" vertical="bottom" (click)="irFormulario()" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list>
+    <ion-searchbar showCancelButton="focus" cancelButtonText="Custom Cancel" (ionChange)="buscarUsuario($event)"></ion-searchbar>
+    <ion-item-sliding *ngFor="let user of pantalla">
+      <ion-item (click)="irFormulario(user)">
+        <ion-label>
+          <h2> Nombre:{{user.nombre}}</h2>
+          <h3> Correo: {{user.email}}</h3>
+          <h2>  Administrador: {{isAdmin(user)}}</h2>
+        </ion-label>
+        <ion-button color="warning" (click)="irFormulario()"> > </ion-button>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger"(click)="eliminarUsuario(user.id)" expandable>
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>
+
+
+

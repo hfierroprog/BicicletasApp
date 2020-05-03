@@ -1,0 +1,7 @@
+{
+  "name": "BicibletasProyect",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
