@@ -21,6 +21,7 @@ export class UsuarioService {
   updateUsuario(id: string, usuario: Usuario) {
     this.firestore.collection('mantenedor_usuario').doc(id).update(usuario);
   }
+  
   deteleUsuario(id: string) {
     this.firestore.collection('mantenedor_usuario').doc(id).delete();
   }

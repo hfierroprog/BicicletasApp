@@ -3,6 +3,7 @@ import {Route, Router} from '@angular/router';
 import {HomePage} from '../home/home.page';
 import {HomePageModule} from '../home/home.module';
 import {R3HostMetadata} from '@angular/compiler';
+import { GuardService } from '../service/guard.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,10 +13,16 @@ import {R3HostMetadata} from '@angular/compiler';
 export class MenuPage {
 
   constructor(
-      private router: Router) {
+      private router: Router,
+      private guardService: GuardService) {
   }
 
   irUsuarios() {
     this.router.navigate(['home']);
+  }
+
+  cerrarSesion() {
+    this.guardService.logout();
+    this.router.navigate(['login']);
   }
 }
